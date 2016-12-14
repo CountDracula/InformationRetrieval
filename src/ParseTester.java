@@ -18,8 +18,8 @@ public class ParseTester {
         System.out.println("Thank you. Proceeding with building the inverted index ...");
         final IndexBuilder builder = new IndexBuilder();
 
-       builder.readFiles(folderPath);
-       builder.printResults();
+        builder.readFiles(folderPath);
+        builder.printResults();
 
 
 
@@ -28,5 +28,4 @@ public class ParseTester {
 
 
 
-    }
-
+}

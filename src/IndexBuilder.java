@@ -13,27 +13,23 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class IndexBuilder {
     private ExecutorService threadPool;
+    public static ConcurrentHashMap<String, Set<Integer>> documentMap;
+    public static CopyOnWriteArrayList<Document> allDocuments;
 
 
-    public CopyOnWriteArrayList<Document> getAllDocuments() {
-        return allDocuments;
+    public IndexBuilder()
+    {
+        documentMap = new ConcurrentHashMap<String, Set<Integer>>();
+        allDocuments = new CopyOnWriteArrayList<Document>();
     }
 
-    public ConcurrentHashMap<String, Set<Integer>> getDocumentMap() {
-        return documentMap;
-    }
 
-    public  ConcurrentHashMap<String, Set<Integer>> documentMap;
-    public  CopyOnWriteArrayList<Document> allDocuments;
 
     public static AtomicInteger atom = new AtomicInteger();
 
     public void readFiles(String folderPath) throws InterruptedException {
 
-        {
-            documentMap = new ConcurrentHashMap<String, Set<Integer>>();
-            allDocuments = new CopyOnWriteArrayList<Document>();
-        }
+
 
         File folder = new File(folderPath);
         File[] allFiles = folder.listFiles();
@@ -46,7 +42,7 @@ public class IndexBuilder {
             threadPool.execute(parser);
         }
         threadPool.shutdown();
-        threadPool.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+        threadPool.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
 
 
 
@@ -54,7 +50,7 @@ public class IndexBuilder {
 
     }
 
-    public  void printResults() throws InterruptedException {
+    public synchronized void printResults() throws InterruptedException {
 
 
         StringBuffer sb1 = new StringBuffer();
@@ -83,8 +79,3 @@ public class IndexBuilder {
         }
     }
 }
-
-
-
-
-

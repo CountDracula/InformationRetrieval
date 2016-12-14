@@ -16,13 +16,12 @@ public class FileParser implements Runnable {
     ArrayList<String> parsedWords;
     StringBuilder sb;
     Document document;
-   IndexBuilder builder;
+
 
 
     public FileParser(File file) {
-        this.file = file;
-        this.builder = new IndexBuilder();
 
+this.file  = file;
     }
 
     @Override
@@ -75,25 +74,20 @@ public class FileParser implements Runnable {
 
             }
 
-            if (!builder.documentMap.containsKey(s)) {
+            if (!IndexBuilder.documentMap.containsKey(s)) {
                 HashSet set = new HashSet<Integer>();
-                builder.documentMap.put(s, set);
-                builder.documentMap.get(s).add(document.getId());
+                IndexBuilder.documentMap.put(s, set);
+               IndexBuilder.documentMap.get(s).add(document.getId());
             }
 
             else {
-                builder.documentMap.get(s).add(document.getId());
+                IndexBuilder.documentMap.get(s).add(document.getId());
             }
 
         }
 
-       builder.allDocuments.add(document);
+        IndexBuilder.allDocuments.add(document);
     }
 
 
-    }
-
-
-
-
-
+}
