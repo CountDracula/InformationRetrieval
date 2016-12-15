@@ -54,30 +54,45 @@ public class IndexBuilder {
     public synchronized void printResults() throws InterruptedException {
 
 
-        StringBuffer sb1 = new StringBuffer();
-
+        StringBuffer sb2 = new StringBuffer();
+        printDocumentMap();
         System.out.println("TERM|DF|(ID,TF)");
         Collections.sort(allDocuments);
 
 
         for (Map.Entry<String, Set<Integer>> entry : documentMap.entrySet()) {
             String s = entry.getKey();
-            sb1.append(s + "|" + entry.getValue().size() + "|");
+            sb2.append(s + "|" + entry.getValue().size() + "|");
 
 
-            // The ID + value still gets printed out in wrong order sometimes..
-            // No idea if it's the ArrayList or ConcurrentHashMap that causes the error
             for (Document d : allDocuments) {
                 {
 
-                    sb1.append("(" + d.getId() + "," + d.getTermFrequency().get(s) + ")" + "");
+                    sb2.append("(" + d.getId() +  "," + d.getTermFrequency().get(s) + ")" + "");
 
                 }
 
             }
-            System.out.println(sb1.toString());
-            sb1.setLength(0);
 
+            System.out.println(sb2.toString());
+
+            sb2.setLength(0);
         }
     }
-}
+
+
+        public void printDocumentMap()
+    {
+        StringBuffer sb1 = new StringBuffer();
+        sb1.append("ID " + "\t" + "Name"+"\n");
+        // TOdo get id:s to list and sort them to display properly
+
+        Collections.sort(allDocuments);
+        for (Document d : allDocuments)
+        {
+            sb1.append(d.getId() + "\t" + d.getFileName()+"\n");
+        }
+        System.out.println(sb1.toString());
+        sb1.setLength(0);
+    }
+    }

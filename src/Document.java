@@ -36,6 +36,5 @@ public class Document implements Comparable<Document> {
     public int compareTo(Document other) {
         return this.id.compareTo(other.id);
     }
-
-
 }
+

@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7fa7282e-5979-4e44-8fec-c9b7e387697e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/InformationRetrieval-ADD/Document.class" afterPath="$PROJECT_DIR$/out/production/InformationRetrieval-ADD/Document.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/InformationRetrieval-ADD/FileParser.class" afterPath="$PROJECT_DIR$/out/production/InformationRetrieval-ADD/FileParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/InformationRetrieval-ADD/IndexBuilder.class" afterPath="$PROJECT_DIR$/out/production/InformationRetrieval-ADD/IndexBuilder.class" />
+      <change type="MODIFICATION" beforePath="C:\Workspace BU\InformationRetrieval-ADD\out\production\InformationRetrieval-ADD\IndexBuilder.class" afterPath="C:\Workspace BU\InformationRetrieval-ADD\out\production\InformationRetrieval-ADD\IndexBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Document.java" afterPath="$PROJECT_DIR$/src/Document.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileParser.java" afterPath="$PROJECT_DIR$/src/FileParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IndexBuilder.java" afterPath="$PROJECT_DIR$/src/IndexBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="InformationRetrieval-ADD.iws" />
@@ -35,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IndexBuilder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IndexBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6721582" vertical-offset="374" max-vertical-offset="1496">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="1768">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,8 +47,8 @@
       <file leaf-file-name="FileParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FileParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1598">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1598">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,13 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Document.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Document.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Document.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="799">
-              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.8121911" vertical-offset="0" max-vertical-offset="782">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#422#423#0" expanded="true" />
                 <element signature="e#453#454#0" expanded="true" />
                 <element signature="e#685#686#0" expanded="true" />
                 <element signature="e#710#711#0" expanded="true" />
@@ -99,9 +97,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ParseTester.java" />
-        <option value="$PROJECT_DIR$/src/Document.java" />
         <option value="$PROJECT_DIR$/src/FileParser.java" />
         <option value="$PROJECT_DIR$/src/IndexBuilder.java" />
+        <option value="$PROJECT_DIR$/src/Document.java" />
       </list>
     </option>
   </component>
@@ -496,12 +494,12 @@
       <workItem from="1481669553701" duration="15055000" />
       <workItem from="1481685452536" duration="1183000" />
       <workItem from="1481711026960" duration="649000" />
-      <workItem from="1481836466019" duration="3653000" />
+      <workItem from="1481836466019" duration="6222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40498000" />
+    <option name="totallyTimeSpent" value="43067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -632,6 +630,7 @@
           <caret line="15" column="18" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
             <element signature="e#685#686#0" expanded="true" />
             <element signature="e#710#711#0" expanded="true" />
@@ -679,6 +678,7 @@
           <caret line="15" column="18" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
             <element signature="e#685#686#0" expanded="true" />
             <element signature="e#710#711#0" expanded="true" />
@@ -716,6 +716,7 @@
           <caret line="15" column="18" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
             <element signature="e#685#686#0" expanded="true" />
             <element signature="e#710#711#0" expanded="true" />
@@ -753,6 +754,7 @@
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
             <element signature="e#453#454#0" expanded="true" />
             <element signature="e#685#686#0" expanded="true" />
             <element signature="e#710#711#0" expanded="true" />
@@ -827,27 +829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="799">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#710#711#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FileParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1598">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1598">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -856,10 +841,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IndexBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6721582" vertical-offset="374" max-vertical-offset="1496">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="1768">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8121911" vertical-offset="0" max-vertical-offset="782">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
           </folding>
         </state>
       </provider>
