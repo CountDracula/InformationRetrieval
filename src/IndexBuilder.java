@@ -13,13 +13,14 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class IndexBuilder {
     private ExecutorService threadPool;
-    public static ConcurrentHashMap<String, Set<Integer>> documentMap;
+    public static ConcurrentSkipListMap<String, Set<Integer>> documentMap;
     public static CopyOnWriteArrayList<Document> allDocuments;
+
 
 
     public IndexBuilder()
     {
-        documentMap = new ConcurrentHashMap<String, Set<Integer>>();
+        documentMap = new ConcurrentSkipListMap<String, Set<Integer>>();
         allDocuments = new CopyOnWriteArrayList<Document>();
     }
 
@@ -56,6 +57,7 @@ public class IndexBuilder {
         StringBuffer sb1 = new StringBuffer();
 
         System.out.println("TERM|DF|(ID,TF)");
+        Collections.sort(allDocuments);
 
 
         for (Map.Entry<String, Set<Integer>> entry : documentMap.entrySet()) {

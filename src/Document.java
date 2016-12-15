@@ -7,31 +7,35 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by Pepe on 13.12.2016.
  */
-public class Document {
-   volatile int id;
-    int tf;
-
+public class Document implements Comparable<Document> {
+    volatile Integer id;
+    String fileName;
 
 
     ConcurrentHashMap<String, Integer> termFrequency;
 
-    public Document()
-    {
-        this.tf = 0;
+    public String getFileName() {
+        return fileName;
+    }
+
+    public Document(String fileName) {
+        this.fileName = fileName;
         this.id = IndexBuilder.atom.incrementAndGet();
         this.termFrequency = new ConcurrentHashMap<String, Integer>();
     }
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
-    public ConcurrentHashMap<String, Integer> getTermFrequency()
-    {
+    public ConcurrentHashMap<String, Integer> getTermFrequency() {
         return termFrequency;
     }
 
+    @Override
+    public int compareTo(Document other) {
+        return this.id.compareTo(other.id);
+    }
 
 
 }

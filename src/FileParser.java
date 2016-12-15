@@ -1,9 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Pepe on 13.12.2016.
@@ -16,12 +12,15 @@ public class FileParser implements Runnable {
     ArrayList<String> parsedWords;
     StringBuilder sb;
     Document document;
-
+    String fileIdentifier;
 
 
     public FileParser(File file) {
 
-this.file  = file;
+        this.file = file;
+        this.fileIdentifier = file.getName();
+
+
     }
 
     @Override
@@ -47,7 +46,7 @@ this.file  = file;
         parsedWords = new ArrayList<String>();
 
         reader = new BufferedReader(new FileReader(file));
-        document = new Document();
+        document = new Document(fileIdentifier);
 
         while ((input = reader.readLine()) != null) {
 
@@ -67,7 +66,6 @@ this.file  = file;
                 document.termFrequency.put(s, 1);
 
 
-
             } else {
 
                 document.termFrequency.put(s, (document.termFrequency.get(s) + 1));
@@ -77,10 +75,8 @@ this.file  = file;
             if (!IndexBuilder.documentMap.containsKey(s)) {
                 HashSet set = new HashSet<Integer>();
                 IndexBuilder.documentMap.put(s, set);
-               IndexBuilder.documentMap.get(s).add(document.getId());
-            }
-
-            else {
+                IndexBuilder.documentMap.get(s).add(document.getId());
+            } else {
                 IndexBuilder.documentMap.get(s).add(document.getId());
             }
 
