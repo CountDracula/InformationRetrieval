@@ -1,8 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
+
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Pepe on 13.12.2016.

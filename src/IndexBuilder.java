@@ -1,8 +1,3 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
-import com.sun.xml.internal.bind.v2.TODO;
-import javafx.util.Pair;
-
-import javax.print.Doc;
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.*;
@@ -84,8 +79,10 @@ public class IndexBuilder {
         public void printDocumentMap()
     {
         StringBuffer sb1 = new StringBuffer();
+        sb1.append("DOCUMENT MAPPING: " +"\n");
+        sb1.append("----------------------"+"\n");
         sb1.append("ID " + "\t" + "Name"+"\n");
-        // TOdo get id:s to list and sort them to display properly
+
 
         Collections.sort(allDocuments);
         for (Document d : allDocuments)
