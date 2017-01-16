@@ -9,14 +9,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class IndexBuilder {
     private ExecutorService threadPool;
     public static ConcurrentSkipListMap<String, Set<Integer>> documentMap;
-    public static CopyOnWriteArrayList<Document> allDocuments;
+   // public static HashMap<Integer, Document> documentID;
+   // public static CopyOnWriteArrayList<Document> allDocuments;
+
+    public static ConcurrentSkipListMap<Integer, Document> allDocuments;
 
 
 
     public IndexBuilder()
     {
         documentMap = new ConcurrentSkipListMap<String, Set<Integer>>();
-        allDocuments = new CopyOnWriteArrayList<Document>();
+        allDocuments = new ConcurrentSkipListMap<Integer, Document>();
     }
 
 
@@ -46,26 +49,26 @@ public class IndexBuilder {
 
     }
 
+
+
     public synchronized void printResults() throws InterruptedException {
 
 
         StringBuffer sb2 = new StringBuffer();
         printDocumentMap();
         System.out.println("TERM|DF|(ID,TF)");
-        Collections.sort(allDocuments);
+        //Collections.sort(allDocuments);
 
 
         for (Map.Entry<String, Set<Integer>> entry : documentMap.entrySet()) {
+
             String s = entry.getKey();
             sb2.append(s + "|" + entry.getValue().size() + "|");
 
-
-            for (Document d : allDocuments) {
-                {
-
-                    sb2.append("(" + d.getId() +  "," + d.getTermFrequency().get(s) + ")" + "");
-
-                }
+           for (Map.Entry<Integer, Document> entry2 : allDocuments.entrySet())
+           {
+                Document d = entry2.getValue();
+                sb2.append("(" + d.getId() + "," + d.getTermFrequency().get(s) + ")" + "");
 
             }
 
@@ -76,6 +79,7 @@ public class IndexBuilder {
     }
 
 
+
         public void printDocumentMap()
     {
         StringBuffer sb1 = new StringBuffer();
@@ -84,10 +88,11 @@ public class IndexBuilder {
         sb1.append("ID " + "\t" + "Name"+"\n");
 
 
-        Collections.sort(allDocuments);
-        for (Document d : allDocuments)
+
+        for (Map.Entry<Integer, Document> d : allDocuments.entrySet())
         {
-            sb1.append(d.getId() + "\t" + d.getFileName()+"\n");
+
+            sb1.append(d.getKey() + "\t" + d.getValue().getFileName()+"\n");
         }
         System.out.println(sb1.toString());
         sb1.setLength(0);

@@ -48,12 +48,13 @@ public class FileParser implements Runnable {
         reader = new BufferedReader(new FileReader(file));
         document = new Document(fileIdentifier);
 
+
         while ((input = reader.readLine()) != null) {
 
             Collections.addAll(parsedWords, input.split("[ \n\t\r;:()'-.{}]"));
 
         }
-
+    document.setWordCount(parsedWords.size());
 
     }
 
@@ -82,7 +83,7 @@ public class FileParser implements Runnable {
 
         }
 
-        IndexBuilder.allDocuments.add(document);
+        IndexBuilder.allDocuments.put(document.getId(), document);
     }
 
 

@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -7,6 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Document implements Comparable<Document> {
     volatile Integer id;
     String fileName;
+    int wordCount;
+    ArrayList<Double> results;
 
 
     ConcurrentHashMap<String, Integer> termFrequency;
@@ -19,10 +22,20 @@ public class Document implements Comparable<Document> {
         this.fileName = fileName;
         this.id = IndexBuilder.atom.incrementAndGet();
         this.termFrequency = new ConcurrentHashMap<String, Integer>();
+        this.results = new ArrayList<>();
     }
 
     public int getId() {
         return id;
+    }
+
+    public int getWordCount(){
+        return wordCount;
+    }
+
+    public void setWordCount(Integer wordCount)
+    {
+        this.wordCount = wordCount;
     }
 
     public ConcurrentHashMap<String, Integer> getTermFrequency() {
