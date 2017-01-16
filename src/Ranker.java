@@ -91,14 +91,14 @@ public class Ranker {
             StringBuffer sb = new StringBuffer();
 
             sb.append("----------------------"+"\n");
-            sb.append("DOCUMENT ID " + "\t" + "RANKING"+"\n");
+            sb.append("DOCUMENT ID " + "\t" + "DOCUMENT NAME" + "\t" + "RANKING"+"\n");
 
 
 
             for (Map.Entry<Integer, Double> d : sortResults(finalScores).entrySet())
             {
 
-               sb.append(d.getKey() + "\t\t\t\t" + df.format(d.getValue()) + "\n");
+               sb.append(d.getKey() + "\t\t\t\t" + IndexBuilder.allDocuments.get(d.getKey()).getFileName() +"\t\t\t" + df.format(d.getValue()) + "\n");
             }
             System.out.println(sb.toString());
             sb.setLength(0);
