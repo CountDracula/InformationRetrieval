@@ -18,11 +18,38 @@ public class Ranker {
 
         for (int i = 0; i < searchWords.length; i++) {
             String searchWord = searchWords[i];
+
+            // Add the searchWord to known words so the program doesn't hang
+            if (!IndexBuilder.documentMap.containsKey(searchWord)) {
+                HashSet set = new HashSet<Integer>();
+                IndexBuilder.documentMap.put(searchWord, set);
+
+
+
+            }
+
             Set<Integer> documents = IndexBuilder.documentMap.get(searchWord);
+
 
             for (Integer s : documents) {
                 Document doc = IndexBuilder.allDocuments.get(s);
 
+
+
+                        // Some error here, we never enter this block so can't modify TF of zero occurrence terms
+                       if (!doc.getTermFrequency().containsKey(searchWord))
+                {
+                    System.out.println("WHY DO WE NOT GET HERE?");
+                    IndexBuilder.documentMap.get(searchWord).add(doc.getId());
+                                        doc.termFrequency.put(searchWord, 0);
+                    doc.setWordCount(doc.getWordCount()+1);
+                }
+
+
+
+
+
+                // Add 0.1 to all results (Laplace smoothing)
                 double tf = doc.termFrequency.get(searchWord) + 0.1;
 
 
