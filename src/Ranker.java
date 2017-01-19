@@ -1,10 +1,8 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
-import sun.reflect.generics.tree.Tree;
+
 
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.concurrent.ConcurrentSkipListMap;
-import java.util.concurrent.CopyOnWriteArrayList;
+
 
 /**
  * Created by Pepe on 16.1.2017.
@@ -19,7 +17,7 @@ public class Ranker {
         for (int i = 0; i < searchWords.length; i++) {
             String searchWord = searchWords[i];
 
-            // Add the searchWord to known words so the program doesn't hang
+            // If the searchWord doesn't appear in our documentMap, add it so the program doesn't hang
             if (!IndexBuilder.documentMap.containsKey(searchWord)) {
                 HashSet set = new HashSet<Integer>();
                 IndexBuilder.documentMap.put(searchWord, set);
@@ -59,6 +57,7 @@ public class Ranker {
                 double wordRank = tf / docSize;
                 doc.results.add(wordRank);
 
+                /// If there is only 1 term to search for, we don't need to multiply with probability of 2nd term so we can return the wordRank of the first term, i.e. first result in the result array
                 if (searchWords.length < 2) {
                     finalScores.put(doc.getId(), doc.results.get(0));
 
@@ -67,6 +66,8 @@ public class Ranker {
                 else
                 {
                     double finalResult = 1;
+
+                    // P(q|d) = wordRank term1 (tf (+ laplacian smoother) / docSize) * wordRank term2 * ... * wordRank term n
                     for (Double d : doc.results)
                     {
                         finalResult *= d;
@@ -80,7 +81,7 @@ public class Ranker {
 
         }
     }
-            /// Used to sort finalscores by value in descending (high -> low) order
+            /// Used to sort the final scores by value in descending (high -> low) order
             public Map<Integer, Double> sortResults(HashMap<Integer, Double> finalScores)
             {
                 Set<Map.Entry<Integer, Double>> entries = finalScores.entrySet();
@@ -113,6 +114,8 @@ public class Ranker {
             public void printFinalResults(String[] searchWords)
         {
             String s = Arrays.toString(searchWords);
+
+            // Round the result to four decimal places
             DecimalFormat df = new DecimalFormat("####0.0000");
             System.out.println("The final ranking for your query: " + s + " is:");
             StringBuffer sb = new StringBuffer();

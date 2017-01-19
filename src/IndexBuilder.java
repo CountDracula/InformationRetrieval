@@ -9,16 +9,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class IndexBuilder {
     private ExecutorService threadPool;
     public static ConcurrentSkipListMap<String, Set<Integer>> documentMap;
-   // public static HashMap<Integer, Document> documentID;
-   // public static CopyOnWriteArrayList<Document> allDocuments;
-
     public static ConcurrentSkipListMap<Integer, Document> allDocuments;
 
 
 
     public IndexBuilder()
     {
-        documentMap = new ConcurrentSkipListMap<String, Set<Integer>>();
+        // ConcurrentSkipListMap is sorted by natural order of keys so need to add Case_Insensitive_Order so that capital letters and lower case letters get sorted in correct order
+        documentMap = new ConcurrentSkipListMap<String, Set<Integer>>(String.CASE_INSENSITIVE_ORDER);
         allDocuments = new ConcurrentSkipListMap<Integer, Document>();
     }
 
@@ -50,14 +48,14 @@ public class IndexBuilder {
     }
 
 
-
+    /// This method prints the inverted index
     public synchronized void printResults() throws InterruptedException {
 
 
         StringBuffer sb2 = new StringBuffer();
         printDocumentMap();
         System.out.println("TERM|DF|(ID,TF)");
-        //Collections.sort(allDocuments);
+
 
 
         for (Map.Entry<String, Set<Integer>> entry : documentMap.entrySet()) {
@@ -79,7 +77,7 @@ public class IndexBuilder {
     }
 
 
-
+        /// This method prints the document mapping (i.e. ID -> file name) before the inverted index
         public void printDocumentMap()
     {
         StringBuffer sb1 = new StringBuffer();

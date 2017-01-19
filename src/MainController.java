@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by Pepe on 13.12.2016.
  */
-public class ParseTester {
+public class MainController {
 
 
 
@@ -42,6 +42,7 @@ public class ParseTester {
 
         }
 
+    // Clear rankings from documents (if user wants to execute a new query)
 public static void clearResults(Ranker ranker)
 {
     ranker.finalScores.clear();

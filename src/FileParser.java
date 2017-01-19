@@ -54,6 +54,7 @@ public class FileParser implements Runnable {
             Collections.addAll(parsedWords, input.split("[ \n\t\r;:()'-.{}]"));
 
         }
+
     document.setWordCount(parsedWords.size());
 
     }
